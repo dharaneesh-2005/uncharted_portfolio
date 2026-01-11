@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Uncharted Journey</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Pirata+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section - The Beginning -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg layer" data-speed="0.2"></div>
+        <div class="hero-mountains layer" data-speed="0.4"></div>
+        <div class="hero-fog layer" data-speed="0.6"></div>
+        
+        <div class="hero-content">
+            <div class="name-reveal">
+                <p class="subtitle">The Chronicles of</p>
+                <h1 class="name-part name-first" data-speed="0.8">DHARANEESH</h1>
+                <h1 class="name-part name-last" data-speed="1.2">S K</h1>
+                <p class="role-text">Full Stack Developer & DevOps Engineer</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>Begin the Journey</span>
+                <div class="compass-pointer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animation Section - The Journey -->
+    <section class="animation-section">
+        <div class="background-effects">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="frame-container">
+            <div class="frame-border">
+                <div class="corner top-left"></div>
+                <div class="corner top-right"></div>
+                <div class="corner bottom-left"></div>
+                <div class="corner bottom-right"></div>
+                <canvas id="parallax-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Journal (About) -->
+    <section class="content-section journal-section" id="about">
+        <div class="paper-texture"></div>
+        <div class="container">
+            <div class="journal-entry">
+                <h2 class="section-title">The Journal</h2>
+                <p class="date">Entry: 2026.01.11</p>
+                <div class="entry-content">
+                    <p>I am an explorer of the digital realm, traversing the landscapes of code and infrastructure. My journey began with simple scripts, but soon I found myself navigating the complex architectures of full-stack development and DevOps engineering.</p>
+                    <p>Like the explorers of old, I map the unknown, build bridges between disparate systems, and automate the path for those who follow.</p>
+                </div>
+                <div class="signature">Dharaneesh S K</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Map (Skills) -->
+    <section class="content-section map-section" id="skills">
+        <div class="map-bg"></div>
+        <div class="container">
+            <h2 class="section-title light">Territories Chartered</h2>
+            <div class="skills-grid">
+                <div class="skill-marker">
+                    <div class="pin"></div>
+                    <span class="skill-name">Frontend</span>
+                    <p class="skill-desc">React, Three.js, CSS3</p>
+                </div>
+                <div class="skill-marker">
+                    <div class="pin"></div>
+                    <span class="skill-name">Backend</span>
+                    <p class="skill-desc">Node.js, Python, Go</p>
+                </div>
+                <div class="skill-marker">
+                    <div class="pin"></div>
+                    <span class="skill-name">DevOps</span>
+                    <p class="skill-desc">Docker, Kubernetes, AWS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artifacts (Projects) -->
+    <section class="content-section artifacts-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Discovered Artifacts</h2>
+            <div class="artifacts-grid">
+                <!-- Project 1 -->
+                <div class="artifact-card">
+                    <div class="artifact-image"></div>
+                    <div class="artifact-info">
+                        <h3>Project Alpha</h3>
+                        <p>A high-performance cloud infrastructure automation tool.</p>
+                        <a href="#" class="btn-explore">Examine</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="artifact-card">
+                    <div class="artifact-image"></div>
+                    <div class="artifact-info">
+                        <h3>Project Beta</h3>
+                        <p>Immersive 3D web experience built with Three.js.</p>
+                        <a href="#" class="btn-explore">Examine</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Outpost (Contact) -->
+    <section class="content-section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title light">Send Coordinates</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Explorer Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Communication Frequency" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Message Log" required></textarea>
+                </div>
+                <button type="submit" class="btn-send">Transmit</button>
+            </form>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
