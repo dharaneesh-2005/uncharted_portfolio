@@ -25,6 +25,32 @@ body {
     line-height: 1.6;
 }
 
+/* Global Film Grain Overlay */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Vignette */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, #0f0d0c 130%);
+    pointer-events: none;
+    z-index: 998;
+}
+
 /* Typography */
 h1,
 h2,
@@ -223,8 +249,47 @@ h3 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transform: rotate(-1deg);
     border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Revert to simple border */
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    /* Contain the watermark */
+}
+
+/* Compass Watermark */
+.journal-entry::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: url('assets/theme/asset-compass.png') no-repeat center/contain;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+    filter: sepia(1);
+}
+
+/* Vintage Tape Decoration (Top Center) */
+.journal-entry::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 150px;
+    height: 40px;
+    background: rgba(220, 200, 150, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+    z-index: 2;
+    mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
+    border-left: 1px dashed rgba(255, 255, 255, 0.4);
+    border-right: 1px dashed rgba(255, 255, 255, 0.4);
 }
 
 .journal-entry .section-title {
@@ -308,6 +373,21 @@ h3 {
     color: var(--color-text-dark);
     background-image: url('assets/theme/texture-paper.png');
     background-blend-mode: multiply;
+    overflow: hidden;
+    /* For route lines */
+}
+
+/* Animated Route Line */
+.route-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--color-accent) 0, var(--color-accent) 10px, transparent 10px, transparent 20px);
+    opacity: 0.3;
+    z-index: 0;
+    transform: translateY(-50%);
 }
 
 .stats-container {
@@ -395,17 +475,29 @@ h3 {
 }
 
 .artifact-card {
-    background: #0f0d0c;
-    border: 1px solid #3e2723;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    background: #1a1410;
+    padding: 10px;
+    /* White border effect */
+    background: #e3d5c2;
+    /* Photo paper color */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: rotate(2deg);
+    transition: all 0.4s ease;
+    border: none;
 }
 
 .artifact-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-gold);
+    transform: rotate(0deg) scale(1.02) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.artifact-card:nth-child(even) {
+    transform: rotate(-2deg);
+}
+
+.artifact-card:nth-child(even):hover {
+    transform: rotate(0deg) scale(1.02) translateY(-5px);
 }
 
 .artifact-image {
@@ -413,6 +505,9 @@ h3 {
     background: #2a1f1a;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 0;
+    /* Remove margin as padding handles it */
 }
 
 /* Use actual images for projects */
