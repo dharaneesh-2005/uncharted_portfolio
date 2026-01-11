@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Uncharted Journey</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Pirata+One&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Hero Section - The Beginning -->
     <section class="hero-section" id="hero">
         <div class="hero-bg layer" data-speed="0.2"></div>
         <div class="hero-mountains layer" data-speed="0.4"></div>
         <div class="hero-fog layer" data-speed="0.6"></div>
-        
+
         <div class="hero-content">
             <div class="name-reveal">
                 <p class="subtitle">The Chronicles of</p>
@@ -37,7 +40,7 @@
             <div class="particle"></div>
             <div class="particle"></div>
         </div>
-        
+
         <div class="frame-container">
             <div class="frame-border">
                 <div class="corner top-left"></div>
@@ -57,8 +60,11 @@
                 <h2 class="section-title">The Journal</h2>
                 <p class="date">Entry: 2026.01.11</p>
                 <div class="entry-content">
-                    <p>I am an explorer of the digital realm, traversing the landscapes of code and infrastructure. My journey began with simple scripts, but soon I found myself navigating the complex architectures of full-stack development and DevOps engineering.</p>
-                    <p>Like the explorers of old, I map the unknown, build bridges between disparate systems, and automate the path for those who follow.</p>
+                    <p>I am an explorer of the digital realm, traversing the landscapes of code and infrastructure. My
+                        journey began with simple scripts, but soon I found myself navigating the complex architectures
+                        of full-stack development and DevOps engineering.</p>
+                    <p>Like the explorers of old, I map the unknown, build bridges between disparate systems, and
+                        automate the path for those who follow.</p>
                 </div>
                 <div class="signature">Dharaneesh S K</div>
             </div>
@@ -69,22 +75,64 @@
     <section class="content-section map-section" id="skills">
         <div class="map-bg"></div>
         <div class="container">
-            <h2 class="section-title light">Territories Chartered</h2>
+            <h2 class="section-title light">Equipment & Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-marker">
-                    <div class="pin"></div>
-                    <span class="skill-name">Frontend</span>
-                    <p class="skill-desc">React, Three.js, CSS3</p>
+                    <div class="icon-ring"></div>
+                    <span class="skill-name">Languages</span>
+                    <p class="skill-desc">Python, Java, C, C++, JavaScript, SQL</p>
                 </div>
                 <div class="skill-marker">
-                    <div class="pin"></div>
-                    <span class="skill-name">Backend</span>
-                    <p class="skill-desc">Node.js, Python, Go</p>
+                    <div class="icon-ring"></div>
+                    <span class="skill-name">Frameworks</span>
+                    <p class="skill-desc">React.js, Node.js, Express.js, Next.js</p>
                 </div>
                 <div class="skill-marker">
-                    <div class="pin"></div>
-                    <span class="skill-name">DevOps</span>
-                    <p class="skill-desc">Docker, Kubernetes, AWS</p>
+                    <div class="icon-ring"></div>
+                    <span class="skill-name">Cloud & DevOps</span>
+                    <p class="skill-desc">AWS, Docker, Kubernetes, CI/CD, GitHub Actions</p>
+                </div>
+                <div class="skill-marker">
+                    <div class="icon-ring"></div>
+                    <span class="skill-name">Databases</span>
+                    <p class="skill-desc">PostgreSQL, MySQL</p>
+                </div>
+                <div class="skill-marker">
+                    <div class="icon-ring"></div>
+                    <span class="skill-name">Fundamentals</span>
+                    <p class="skill-desc">DSA, OOP, DBMS, OS, Computer Networking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Programming (Expeditions) -->
+    <section class="content-section expedition-section" id="achievements">
+        <div class="container">
+            <h2 class="section-title">Conquered Expeditions</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="700">0</span>
+                    <span class="stat-label">Problems Solved</span>
+                    <span class="stat-sub">LeetCode, CodeChef, Codeforces</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="100">0</span>
+                    <span class="stat-label">Contests</span>
+                    <span class="stat-sub">Top 10% Percentile</span>
+                </div>
+            </div>
+
+            <div class="achievements-list">
+                <div class="achievement-card">
+                    <div class="medal gold"></div>
+                    <h3>Hackathon Winner</h3>
+                    <p>1st Place in a 24-hour coding marathon. Proved endurance and rapid problem-solving skills.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="medal silver"></div>
+                    <h3>Hackathon Runner-up</h3>
+                    <p>2nd Place in a 12-hour intensive development sprint.</p>
                 </div>
             </div>
         </div>
@@ -93,24 +141,32 @@
     <!-- Artifacts (Projects) -->
     <section class="content-section artifacts-section" id="projects">
         <div class="container">
-            <h2 class="section-title">Discovered Artifacts</h2>
+            <h2 class="section-title">Recovered Artifacts</h2>
             <div class="artifacts-grid">
                 <!-- Project 1 -->
                 <div class="artifact-card">
-                    <div class="artifact-image"></div>
-                    <div class="artifact-info">
-                        <h3>Project Alpha</h3>
-                        <p>A high-performance cloud infrastructure automation tool.</p>
-                        <a href="#" class="btn-explore">Examine</a>
+                    <div class="artifact-image project-1-img"></div>
+                    <div class="artifact-content">
+                        <h3>Fee Call Assistant</h3>
+                        <span class="artifact-date">2024 (React, Express, LLM)</span>
+                        <p>An AI-driven automaton that notifies students of pending fees. Integrated with an LLM oracle
+                            to answer real-time queries on fee status and breakdowns.</p>
+                        <div class="tech-stack">
+                            <span>LLM</span><span>React</span><span>Express</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Project 2 -->
                 <div class="artifact-card">
-                    <div class="artifact-image"></div>
-                    <div class="artifact-info">
-                        <h3>Project Beta</h3>
-                        <p>Immersive 3D web experience built with Three.js.</p>
-                        <a href="#" class="btn-explore">Examine</a>
+                    <div class="artifact-image project-2-img"></div>
+                    <div class="artifact-content">
+                        <h3>Regalyn Watches</h3>
+                        <span class="artifact-date">2025 (React, Express)</span>
+                        <p>A full-stack e-commerce trading post. Features Google OAuth, Razorpay secure payments,
+                            Shiprocket logistics, and automated invoice scrolls.</p>
+                        <div class="tech-stack">
+                            <span>E-Commerce</span><span>Payment Gateway</span><span>OAuth</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -135,7 +191,8 @@
             </form>
         </div>
     </section>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

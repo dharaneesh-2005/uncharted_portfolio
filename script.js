@@ -153,6 +153,28 @@ const observer = new IntersectionObserver((entries) => {
                     }, i * 200);
                 });
             }
+
+            // Stats Counter Animation
+            if (entry.target.id === 'achievements') {
+                const stats = entry.target.querySelectorAll('.stat-number');
+                stats.forEach(stat => {
+                    const target = +stat.getAttribute('data-count');
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+
+                    let current = 0;
+                    const updateCount = () => {
+                        current += increment;
+                        if (current < target) {
+                            stat.innerText = Math.ceil(current) + "+";
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            stat.innerText = target + "+";
+                        }
+                    };
+                    updateCount();
+                });
+            }
         }
     });
 }, observerOptions);
